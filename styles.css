@@ -7,6 +7,14 @@
     overflow: scroll;
 }
 
-#submit {
+#submit-text {
     margin: 5px;
+}
+
+#submit-file {
+    margin: 5px;
+}
+
+#file {
+    margin-bottom: 3px;
 }
