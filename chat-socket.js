@@ -41,14 +41,13 @@ const handleSendFile = async () => {
 
     const res = await fetch("http://localhost:3000", {
         method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'omit',
+        mode: 'no-cors',
         headers: {
-            'Content-Type': 'multipart/form-data'
+            'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>',
+            'Content-Length': '<calculated when request is sent>',
+            'Connection': 'keep-alive'
         },
         redirect: 'follow',
-        referrerPolicy: 'no-referrer',
         body: formData
     })
 
