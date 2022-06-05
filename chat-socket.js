@@ -30,7 +30,6 @@ const buildNewMessage = (message) => {
     div.appendChild(document.createTextNode(message));
     div.style.padding = "5px 40px 5px 10px"
     div.style.display = "flex"
-    // div.style.margin = "px"
     div.style.wordBreak = "break-all"
     return div;
 }
