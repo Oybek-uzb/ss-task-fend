@@ -16,8 +16,8 @@ const handleNewMessage = (message) => {
 }
 
 const buildNewMessage = (message) => {
-    const li = document.createElement("li");
-    li.appendChild(document.createTextNode(message));
-
-    return li;
+    const div = document.createElement("div");
+    div.appendChild(document.createTextNode(message));
+    div.style.margin = "8px"
+    return div;
 }

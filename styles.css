@@ -1,0 +1,12 @@
+#messages {
+    width: 500px;
+    height: 500px;
+    border: #000 1px solid;
+    margin: 5px;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+#submit {
+    margin: 5px;
+}
