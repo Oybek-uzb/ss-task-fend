@@ -41,16 +41,13 @@ const handleSendFile = async () => {
 
     const res = await fetch("http://localhost:3000", {
         method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>',
-            'Content-Length': '<calculated when request is sent>',
-            'Connection': 'keep-alive'
-        },
         redirect: 'follow',
         body: formData
     })
 
-    console.log(formData.get("file"))
-    console.log(await res)
+    const result = await res.json()
+
+    // socket.emit('')
+
+    console.log(result)
 }
