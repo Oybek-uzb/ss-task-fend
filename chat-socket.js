@@ -47,7 +47,38 @@ const handleSendFile = async () => {
 
     const result = await res.json()
 
-    // socket.emit('')
+    socket.emit('file-message', {
+        socketId: socket.id,
+        ...result
+    })
 
-    console.log(result)
+}
+
+socket.on("file-message", ({ socketId, orgFileName, url }) => {
+    handleNewFileMessage(socketId, orgFileName, url);
+})
+
+const handleNewFileMessage = (socketId, originalName, url) => {
+    const newMessage = buildNewFileMessage(originalName, url)
+
+    if (socket.id === socketId) {
+        newMessage.style.justifyContent = "flex-end"
+        newMessage.style.padding = "5px 10px 5px 40px"
+    }
+
+    messages.appendChild(newMessage);
+}
+
+const buildNewFileMessage = (orgName, url) => {
+    const div = document.createElement("div");
+    const anchorElement = document.createElement("a");
+    anchorElement.href = "#"
+    anchorElement.download = url;
+    anchorElement.appendChild(document.createTextNode(orgName))
+
+    div.appendChild(anchorElement);
+    div.style.padding = "5px 40px 5px 10px"
+    div.style.display = "flex"
+    div.style.wordBreak = "break-all"
+    return div;
 }
