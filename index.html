@@ -1,29 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
 </head>
 <body>
-    <div id="messages">
-
+    <div id="container">
+        <h2 id="header">Sign up</h2>
+        <form id="signup">
+            <label for="username" class="in">Username:</label><input type="text" id="username" class="in" name="username" />
+            <br />
+            <label for="password" class="in">Password:</label><input type="password" id="password" class="in" name="password" />
+        </form>
+        <button onclick="handleSignup()" id="btn">Sign up</button>
+        <br />
+        <a href="signin.html" class="in">Sign in</a>
     </div>
 
-    <div id="submit-text">
-        <label for="message"></label><input id="message" type="text" />
-        <button onclick="handleSubmitNewMessage()">Submit</button>
-    </div>
-
-    <form id="form-elem">
-        File: <input type="file" id="file">
-    </form>
-    <button onclick="handleSendFile()">Submit</button>
-
-    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
-    <script src="./chat-socket.js"></script>
+    <script src="./auth.js"></script>
 </body>
 </html>

@@ -18,3 +18,24 @@
 #file {
     margin-bottom: 3px;
 }
+
+#container {
+    display: block;
+    width: 300px;
+    height: 300px;
+    border: #000 1px solid;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.in {
+    margin: 5px;
+}
+
+#header {
+    margin: 5px;
+}
+
+#btn {
+    margin-left: 60%;
+}
